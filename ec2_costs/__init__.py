@@ -1,4 +1,3 @@
-from __future__ import unicode_literals
 import re
 import json
 import collections
@@ -139,8 +138,8 @@ def get_reserved_analysis(conn):
                 tenancy=tenancy,
             )
             covered_price = None
-            if matched:
-                covered_price = matched.recurring_charges[0].amount
+            if matched :
+                covered_price = 0 #matched.recurring_charges[0].amount
             instances.append((instance.id, covered_price, instance.tags.get('Name')))
         instance_items.append((
             (itype, vpc_id, zone, tenancy),
